@@ -1,0 +1,178 @@
+[![Download Here](https://img.shields.io/badge/⬇_Download-Here-success?style=for-the-badge)](https://chromewebstore.google.com/detail/muse-automation-auto-muse/jjcigbgkfmobiegbfipoaolediphpljp)
+
+# 🚀 Muse Automation v1.0.0 - Muse.ai AI Automation [![Tiếng Việt](https://img.shields.io/badge/Tiếng%20Việt-green)](README_vi.md) [![中文](https://img.shields.io/badge/中文-red)](README_zh.md)
+
+**Muse Automation** is a productivity tool that automates your creative workflow on Muse.ai. Stop manually entering prompts one by one—automate the process and generate videos and images at scale.
+
+-----
+
+## ✨ Key Features
+
+* **🚀 Batch Processing:** Queue dozens or hundreds of prompts and let the extension handle submission and generation automatically.
+* **🎬 Text-to-Video Automation:** Generate videos from text descriptions. Supports batch processing with custom delays.
+* **🎬 Frame-to-Video:** Use a start frame image and prompts to create dynamic videos.
+* **🎬 Ingredients-to-Video:** Combine your uploaded images (characters, objects, UI elements) with prompts to build videos.
+* **🖼️ Text-to-Image Batching:** Create up to 4 images per prompt with support for aspect ratios (16:9, 9:16, 1:1, 3:4, 4:3).
+* **🖼️ Image-to-Image:** Generate image variations from a source image and prompts.
+* **⚙️ Professional Controls:**
+    * **Range Run:** Run only a part of your list (for example, prompts 5 to 20).
+    * **Smart Delays:** Set a random wait time (from–to seconds) between prompts to manage rate limits.
+    * **Auto Retry:** Retry failed generations automatically (1–20 times).
+    * **Auto Download:** Automatically download results when generation completes.
+* **🔗 Concat / Edit Chains:** Continue a video from the previous prompt, or edit the image made by the previous prompt.
+* **👤 Auto-add Character Images:** Images are matched to prompts automatically by file name.
+* **📄 Import Prompts:** Load prompts from `.txt`, `.xlsx`, or `.csv` files.
+* **📊 Real-time Queue Monitoring:** Monitor progress with the prompt queue and status of each prompt in the Side Panel.
+* **📂 Organized File Management:** Downloads are sorted into project-based folders.
+* **🌐 Multi-language Support:** English, Vietnamese, Chinese, Korean, Japanese, Spanish.
+
+-----
+
+## 📥 Installation
+
+### Method 1: Chrome Web Store (Recommended)
+1. Visit the [Chrome Web Store](https://chromewebstore.google.com/detail/muse-automation-auto-muse/jjcigbgkfmobiegbfipoaolediphpljp) and click **Add to Chrome**.
+
+---
+
+## 📖 User Guide
+
+### Getting Started
+
+1. **Navigate to Muse.ai**
+   - Open [muse.ai](https://muse.ai)
+   - The extension works on Muse.ai pages. On other pages, the Side Panel shows a **Navigate to Muse AI** button.
+
+2. **Open the Extension**
+   - Click the extension icon in the Chrome toolbar. Pin it for easier access!
+
+3. **Configure Batch Settings**
+   - In the **Control** tab, you can set:
+     - **Concurrent Prompts:** How many prompts to run at the same time.
+     - **Random Delay:** Random wait time (from–to, 0–300 seconds) before handling the next prompt.
+
+4. **Select a Mode**
+   - Choose from: **Text to Video**, **Frame to Video**, **Ingredients to Video**, **Text to Image**, or **Image to Image**.
+
+### 1. Text-to-Video Mode
+
+1. Select **Text to Video** mode.
+2. Enter prompts into the input box (separate each prompt with a **blank line**).
+3. Alternatively, click the **Upload** icon to import prompts from a `.txt`, `.xlsx`, or `.csv` file. For spreadsheets, choose the sheet and column to import.
+4. (Optional) In **Video Mode per Prompt**, set a prompt to **10s concat** to continue its video with the next prompt.
+5. Set **Save to folder** and choose the prompt range (**Start** to **End**).
+6. Click **Run** to start the batch.
+
+**Example Prompt:**
+```
+A futuristic cyberpunk city with neon lights reflecting in the rain.
+The camera glides through the narrow alleys.
+
+A peaceful Japanese garden with cherry blossoms falling into a pond.
+A slow zoom into the koi fish swimming below.
+```
+
+### 2. Frame-to-Video Mode
+
+1. Select **Frame to Video** mode.
+2. Click to upload or drag & drop your start frame images (PNG, JPG, GIF up to 10MB each).
+3. Enter prompts (separate with blank lines). Images are assigned to prompts in order—upload one image per prompt.
+4. Click **Run**.
+
+### 3. Ingredients-to-Video Mode
+
+1. Select **Ingredients to Video** mode.
+2. Upload your ingredient images (characters, objects, backgrounds).
+3. Enter prompts (separate with blank lines).
+4. (Optional) Turn on **Auto-add character images** so each prompt uses images whose file name appears in the prompt. Example: `Anna.png` is added to any prompt that contains "Anna".
+5. Click **Run**.
+
+### 4. Text-to-Image Mode
+
+1. Select **Text to Image** mode.
+2. Enter detailed descriptions for your images.
+3. Choose **Outputs per Prompt** (1–4) and configure the desired **Aspect Ratio** in the Settings tab.
+4. (Optional) In **Image Mode per Prompt**, choose **Edit Image** to make the next prompt edit the image created by this prompt.
+5. Click **Run**.
+
+### 5. Image-to-Image Mode
+
+1. Select **Image to Image** mode.
+2. Upload source images.
+3. Enter prompts for image variations. You can also turn on **Auto-add character images**.
+4. Click **Run**.
+
+---
+
+## ⚙️ Settings Configuration
+
+Access the **Settings** tab to customize your experience:
+
+* **Default Mode:** Set which mode opens by default.
+* **Default Aspect Ratio:** Choose from 16:9, 9:16, 1:1, 3:4, or 4:3.
+* **Default Video Option:** Default video mode for each prompt (10 seconds or 10 seconds concat).
+* **Default Image Mode Option:** Default image mode for each prompt (New Image or Edit Image).
+* **Max Retries on Failure:** How many times to retry a failed generation (1–20).
+* **Auto Download Quality (Video / Image):** Choose 1080p video, 1k image, or **No Download**.
+* **Language:** Switch between English, Tiếng Việt, 中文, 한국어, 日本語, Español.
+* **Download Settings:** Files are saved to Chrome's Download folder, inside your project folder.
+
+Click **Save Settings** to apply, or **Reset Defaults** to restore the default values.
+
+---
+
+## 💡 Tips & Best Practices
+
+1. **Wait Times:** If you hit rate limits, increase **Random Delay** in the Control tab.
+2. **Test First:** Run a small range (for example, prompts 1 to 2) before running the full list.
+3. **Prompting:** Be specific. Detailed prompts lead to better results. Separate multiple prompts with a blank line.
+4. **Character Images:** Name image files after your characters (e.g. `Anna.png`, `Tom.jpg`) to use **Auto-add character images**.
+5. **File Organization:** Downloads are automatically sorted into project-based folders. Keep **Auto change file name** on so each file starts with its prompt number.
+
+---
+
+## 🔧 Troubleshooting
+
+| Issue | Solution |
+| :--- | :--- |
+| **Extension not active** | Ensure you are on [muse.ai](https://muse.ai). Refresh the page if needed. |
+| **"Please refresh Muse AI page" error** | Refresh the Muse.ai page (Ctrl+R, F5) and try again. If the problem persists, reinstall the extension. |
+| **Generation Errors** | Muse.ai may be busy. The extension will retry based on your **Max Retries** setting. |
+| **Run button is disabled** | Add prompts, and for image modes upload enough images (one per prompt). |
+| **Run button shows "Upgrade to Max"** | You have reached the daily free limit. Upgrade to Max or try again tomorrow. |
+| **Downloads not working** | Ensure "Ask where to save each file before downloading" is **OFF** in Chrome Settings. |
+| **Login Required** | Make sure you are logged into your Muse.ai account. |
+
+---
+
+## 🔒 Privacy & Data
+
+* **Local Processing:** All automation logic runs locally in your browser.
+* **No Data Collection:** We do not store or collect your prompts, images, or account data.
+* **Secure Storage:** Settings are saved only in your browser's local storage.
+
+---
+
+## 📞 Support
+
+- **Author:** Trường Nguyễn
+- **Website:** [kylenguyen.me](https://kylenguyen.me)
+- **Feedback:** Use the "Report a bug" link in the extension. Copy the logs from the **Debug Logs** tab and send them with your report.
+
+---
+
+## 📦 Version
+
+Current version: **1.0.0**
+
+---
+
+## 📜 License
+
+Copyright © 2026 **Trường Nguyễn**. All Rights Reserved.
+
+This software is proprietary. Unauthorized copying or distribution is prohibited.
+
+---
+
+**Made with ❤️ by Trường Nguyễn**
