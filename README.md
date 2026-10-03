@@ -9,6 +9,7 @@
 ## ✨ Key Features
 
 * **🚀 Batch Processing:** Queue dozens or hundreds of prompts and let the extension handle submission and generation automatically.
+* **🧩 Workflow (visual drag-and-drop editor):** Connect prompts, images and generators on a canvas — e.g. generate images, then turn those images into videos automatically. Save several workflows, run one node or all of them, import/export them as files.
 * **🎬 Text-to-Video Automation:** Generate videos from text descriptions. Supports batch processing with custom delays.
 * **🎬 Frame-to-Video:** Use a start frame image and prompts to create dynamic videos.
 * **🎬 Ingredients-to-Video:** Combine your uploaded images (characters, objects, UI elements) with prompts to build videos.
@@ -53,6 +54,9 @@
 
 4. **Select a Mode**
    - Choose from: **Text to Video**, **Frame to Video**, **Ingredients to Video**, **Text to Image**, or **Image to Image**.
+
+5. **Or open the Workflow editor**
+   - Click **Workflow** at the bottom of the Control tab to build multi-step flows visually (see [6. Workflow](#6-workflow-visual-drag-and-drop-editor)).
 
 ### 1. Text-to-Video Mode
 
@@ -102,6 +106,79 @@ A slow zoom into the koi fish swimming below.
 3. Enter prompts for image variations. You can also turn on **Auto-add character images**.
 4. Click **Run**.
 
+### 6. Workflow (Visual Drag-and-Drop Editor)
+
+Workflow is a visual drag-and-drop editor for flows with several steps — for example: generate a few images, then use those images to make videos, then continue each video with another prompt. It opens in its own window and runs on your open muse.ai tab.
+
+#### Open it
+
+* Click **Workflow** in the Control tab (bottom row).
+* Already typed prompts or uploaded images in the side panel? Hover **Workflow** and click **Convert to workflow**: your prompts, each prompt's mode and your images become nodes in the editor, ready to run.
+
+#### The screen
+
+| Area | What it holds |
+| :--- | :--- |
+| **Left** | **Nodes** (click or drag one onto the canvas) and **Your workflows** (all saved workflows) |
+| **Center** | The canvas. Top-left: Undo/Redo, **Auto arrange**, fit view, **Example**, clear, and the **Run all** button |
+| **Right** | Summary, live **Progress**, **Issues** (click one to jump to the node), **Run plan** and the settings it uses |
+
+#### Nodes
+
+| Node | What it does |
+| :--- | :--- |
+| **Enter prompt** | One or more prompts, separated by a **blank line** |
+| **Upload image** | Your images (drop files on it). Hover an image: 🔍 to view it larger, ✕ to remove it, the grip in the corner to drag it to another position. The order (or the sort menu) decides which prompt gets which image |
+| **Generate Image** | Text to Image, or Image to Image when images are connected. Options: **Image Mode per Prompt**, **Max Input Images per Prompt**, **Auto-add character images** |
+| **Generate Video** | Text to Video, or with images connected **Frame to Video** / **Components to Video** (= Ingredients to Video). Options: **Video Mode per Prompt**, images per prompt (shared with the side panel settings), **Auto-add character images** (Components to Video) |
+
+Generate nodes are named automatically from their first prompt (`image_…` / `video_…`). Each prompt row shows the images it will receive, so you can check before running.
+
+#### Connect nodes
+
+Drag from the round handle on the right of a node and **drop it anywhere on the other node** — the right input is picked for you. Nodes that accept the connection light up while you drag.
+
+| From | To | Meaning |
+| :--- | :--- | :--- |
+| Enter prompt | Generate Image / Generate Video | The prompts to generate |
+| Upload image | Generate Image / Generate Video | Reference images, start frames or components |
+| Generate Image | Generate Image / Generate Video | The **generated images** become that node's input (it runs after the images are ready) |
+| Generate Video | Generate Video | The next video **continues from the last frame** of this one |
+
+#### Run
+
+* **Run all** (top-left, or `Ctrl/⌘ + Enter`) runs the whole workflow in the right order: nodes waiting for generated images start automatically once those images exist.
+* Each Generate node also has its own **Run** button to run only that node. It is disabled until the nodes it depends on have finished (hover to see why).
+* **Stop** cancels what is still running.
+* While running, the connections into the node that is generating light up and flow, so you can see where the workflow is.
+
+> ⚠️ **Chrome pauses muse.ai when its tab isn't visible** (for example when the workflow window covers it full screen). Turn on **Enable background mode** (side panel) or hover **Run all → Run in background**, then pick the muse.ai tab in Chrome's dialog. This shares the muse.ai tab (nothing is recorded or sent anywhere) so it keeps generating behind other windows. The green **Running in background** badge shows it's on; click ✕ to stop it.
+
+#### Results
+
+Results appear inside each Generate node. Hover a result: 🔍 opens it large, ✕ removes it (the eraser clears all results of the node). Videos play on hover. Files are still downloaded as usual.
+
+#### Manage workflows
+
+Under **Your workflows** (left): **New**, **Import**, and for each workflow the **⋯** menu — **Rename** (or double-click the name), **Duplicate**, **Export**, **Delete**. Everything is saved automatically.
+
+* **Export** downloads a `.json` file. It starts with `//` comment lines that describe every node, property and connection, so you can give the file to an AI assistant and ask it to write new workflows. The comment lines are removed on import.
+* **Import** a file with the button, or simply **drag the `.json` file onto the canvas**.
+
+#### Editing shortcuts
+
+Click **Shortcuts** in the top bar (or press `?`) to see them all.
+
+| Action | Keys |
+| :--- | :--- |
+| Undo / Redo | `Ctrl/⌘ + Z` / `Ctrl/⌘ + Shift + Z` |
+| Copy / Cut / Paste nodes (also into another workflow) | `Ctrl/⌘ + C / X / V` |
+| Duplicate selection | `Ctrl/⌘ + D` |
+| Select all / Add to selection / Box select | `Ctrl/⌘ + A` / `Ctrl/⌘ + click` / `Shift + drag` |
+| Auto arrange | `Shift + A` |
+| Delete selected | `Delete` |
+| Run all / Run in background | `Ctrl/⌘ + Enter` / `Ctrl/⌘ + Shift + Enter` |
+
 ---
 
 ## ⚙️ Settings Configuration
@@ -128,6 +205,7 @@ Click **Save Settings** to apply, or **Reset Defaults** to restore the default v
 3. **Prompting:** Be specific. Detailed prompts lead to better results. Separate multiple prompts with a blank line.
 4. **Character Images:** Name image files after your characters (e.g. `Anna.png`, `Tom.jpg`) to use **Auto-add character images**.
 5. **File Organization:** Downloads are automatically sorted into project-based folders. Keep **Auto change file name** on so each file starts with its prompt number.
+6. **Workflow:** Test one Generate node with its own **Run** button before **Run all**. Start from **Example** if you're new, and use **Export** to back up or share a workflow.
 
 ---
 
@@ -142,6 +220,9 @@ Click **Save Settings** to apply, or **Reset Defaults** to restore the default v
 | **Run button shows "Upgrade to Max"** | You have reached the daily free limit. Upgrade to Max or try again tomorrow. |
 | **Downloads not working** | Ensure "Ask where to save each file before downloading" is **OFF** in Chrome Settings. |
 | **Login Required** | Make sure you are logged into your Muse.ai account. |
+| **Workflow: generation stays at "Generating" forever** | Chrome paused the hidden muse.ai tab. Turn on **Enable background mode** (or **Run in background**), or keep muse.ai visible. |
+| **Workflow: a node's Run button is disabled** | Hover it: run the node it depends on first, or fix the issue shown (e.g. no prompt connected). |
+| **Workflow: "No muse.ai tab found"** | Open [muse.ai](https://muse.ai) in a tab (the green dot in the top bar shows it's connected). |
 
 ---
 
@@ -149,7 +230,8 @@ Click **Save Settings** to apply, or **Reset Defaults** to restore the default v
 
 * **Local Processing:** All automation logic runs locally in your browser.
 * **No Data Collection:** We do not store or collect your prompts, images, or account data.
-* **Secure Storage:** Settings are saved only in your browser's local storage.
+* **Secure Storage:** Settings and workflows are saved only in your browser's local storage.
+* **Background mode:** Sharing the muse.ai tab only keeps it running. Nothing is recorded, saved or sent anywhere.
 
 ---
 
