@@ -144,6 +144,7 @@ Drag from the round handle on the right of a node and **drop it anywhere on the 
 | Upload image | Generate Image / Generate Video | Reference images, start frames or components |
 | Generate Image | Generate Image / Generate Video | The **generated images** become that node's input (it runs after the images are ready) |
 | Generate Video — **last frame** output | Generate Video | The next video **continues from the last frame** of this one |
+| Generate Video — **last frame** output | Generate Image | The **last frame** of each video becomes an input image (it runs after the video is ready) |
 | Generate Video — **video** output 🎬 | Generate Video | The **generated video becomes a component** of the next one (Components to Video; it runs after the video is ready) |
 
 #### Run

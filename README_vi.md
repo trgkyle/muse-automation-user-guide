@@ -144,6 +144,7 @@ Kéo từ chấm tròn bên phải của một node và **thả vào bất kỳ 
 | Tải ảnh lên | Tạo ảnh / Tạo video | Ảnh tham chiếu, khung hình bắt đầu hoặc thành phần |
 | Tạo ảnh | Tạo ảnh / Tạo video | **Ảnh vừa tạo** trở thành ảnh đầu vào của node đó (node đó chạy khi ảnh đã sẵn sàng) |
 | Tạo video — cổng **khung cuối** | Tạo video | Video sau **nối tiếp từ khung hình cuối** của video trước |
+| Tạo video — cổng **khung cuối** | Tạo ảnh | **Khung hình cuối** của mỗi video trở thành ảnh đầu vào (chạy khi video đã sẵn sàng) |
 | Tạo video — cổng **video** 🎬 | Tạo video | **Video vừa tạo trở thành thành phần** của video sau (Thành phần thành Video; chạy khi video đã sẵn sàng) |
 
 #### Chạy
