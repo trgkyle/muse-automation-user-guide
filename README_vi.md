@@ -154,7 +154,7 @@ Kéo từ chấm tròn bên phải của một node và **thả vào bất kỳ 
 * **Dừng** huỷ những gì đang chạy.
 * Khi đang chạy, các đường nối vào node đang tạo sẽ sáng lên và có dòng chảy, để bạn thấy workflow đang ở bước nào.
 
-> ⚠️ **Chrome tạm dừng muse.ai khi tab không hiển thị** (ví dụ cửa sổ workflow che toàn màn hình). Bật **Bật chạy nền** (ở side panel) hoặc rê chuột vào **Chạy tất cả → Chạy nền**, rồi chọn tab muse.ai trong hộp thoại của Chrome. Việc này chia sẻ tab muse.ai (không ghi lại hay gửi đi đâu) để muse.ai tiếp tục tạo khi bị cửa sổ khác che. Nhãn xanh **Đang chạy nền** cho biết đã bật; nhấn ✕ để tắt.
+> ⚠️ **Chrome tạm dừng muse.ai khi tab không hiển thị** (ví dụ cửa sổ workflow che toàn màn hình). Nhấn **Bật chạy nền** (ngay dưới **Chạy tất cả** trong workflow, hoặc ở side panel), rồi chọn tab muse.ai trong hộp thoại của Chrome. Việc này chia sẻ tab muse.ai (không ghi lại hay gửi đi đâu) để muse.ai tiếp tục tạo khi bị cửa sổ khác che. Nhãn xanh **Đang chạy nền** cho biết đã bật; nhấn ✕ để tắt.
 
 #### Kết quả
 

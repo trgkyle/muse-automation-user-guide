@@ -154,7 +154,7 @@ Drag from the round handle on the right of a node and **drop it anywhere on the 
 * **Stop** cancels what is still running.
 * While running, the connections into the node that is generating light up and flow, so you can see where the workflow is.
 
-> ⚠️ **Chrome pauses muse.ai when its tab isn't visible** (for example when the workflow window covers it full screen). Turn on **Enable background mode** (side panel) or hover **Run all → Run in background**, then pick the muse.ai tab in Chrome's dialog. This shares the muse.ai tab (nothing is recorded or sent anywhere) so it keeps generating behind other windows. The green **Running in background** badge shows it's on; click ✕ to stop it.
+> ⚠️ **Chrome pauses muse.ai when its tab isn't visible** (for example when the workflow window covers it full screen). Click **Enable background mode** (under **Run all** in the workflow, or in the side panel), then pick the muse.ai tab in Chrome's dialog. This shares the muse.ai tab (nothing is recorded or sent anywhere) so it keeps generating behind other windows. The green **Running in background** badge shows it's on; click ✕ to stop it.
 
 #### Results
 
