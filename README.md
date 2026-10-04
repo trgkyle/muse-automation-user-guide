@@ -143,7 +143,8 @@ Drag from the round handle on the right of a node and **drop it anywhere on the 
 | Enter prompt | Generate Image / Generate Video | The prompts to generate |
 | Upload image | Generate Image / Generate Video | Reference images, start frames or components |
 | Generate Image | Generate Image / Generate Video | The **generated images** become that node's input (it runs after the images are ready) |
-| Generate Video | Generate Video | The next video **continues from the last frame** of this one |
+| Generate Video — **last frame** output | Generate Video | The next video **continues from the last frame** of this one |
+| Generate Video — **video** output 🎬 | Generate Video | The **generated video becomes a component** of the next one (Components to Video; it runs after the video is ready) |
 
 #### Run
 
