@@ -88,7 +88,7 @@ A slow zoom into the koi fish swimming below.
 1. Select **Ingredients to Video** mode.
 2. Upload your ingredient images (characters, objects, backgrounds).
 3. Enter prompts (separate with blank lines).
-4. (Optional) Turn on **Auto-add character images** so each prompt uses images whose file name appears in the prompt. Example: `Anna.png` is added to any prompt that contains "Anna".
+4. (Optional) Turn on **Auto-add character images** so each prompt uses images whose file name appears in the prompt. Example: `Anna.png` is added to any prompt that contains "Anna". If one name is inside a longer one, the longer one wins: with `1.png` and `11.png`, "image 11" uses only `11.png`.
 5. Click **Run**.
 
 ### 4. Text-to-Image Mode
@@ -120,8 +120,10 @@ Workflow is a visual drag-and-drop editor for flows with several steps — for e
 | Area | What it holds |
 | :--- | :--- |
 | **Left** | **Nodes** (click or drag one onto the canvas) and **Your workflows** (all saved workflows) |
-| **Center** | The canvas. Top-left: Undo/Redo, **Auto arrange**, fit view, **Example**, clear, and the **Run all** button |
-| **Right** | Summary, live **Progress**, **Issues** (click one to jump to the node), **Run plan** and the settings it uses |
+| **Top bar** | The canvas tools: Undo/Redo, **Auto arrange**, fit view, **Example**, clear. On the right: the **Details** button, **Shortcuts** and the muse.ai tab status |
+| **Canvas** | Your nodes. Top-left: **Run all** (and **Stop** while running) and **Enable background mode** |
+
+The **Details** button shows what needs attention: **Issues (n)** in red/yellow when something blocks a run, **Running 3/8** while generating. Click it to open a panel with the issues (click one to jump to the node), live progress, the run plan and the settings it uses.
 
 #### Nodes
 
@@ -132,7 +134,7 @@ Workflow is a visual drag-and-drop editor for flows with several steps — for e
 | **Generate Image** | Text to Image, or Image to Image when images are connected. Options: **Image Mode per Prompt**, **Max Input Images per Prompt**, **Auto-add character images** |
 | **Generate Video** | Text to Video, or with images connected **Frame to Video** / **Components to Video** (= Ingredients to Video). Options: **Video Mode per Prompt**, images per prompt (shared with the side panel settings), **Auto-add character images** (Components to Video) |
 
-Generate nodes are named automatically from their first prompt (`image_…` / `video_…`). Each prompt row shows the images it will receive, so you can check before running.
+Generate nodes are named automatically from their first prompt (`image_…` / `video_…`). Each prompt row shows the images it will receive, so you can check before running. Their preview takes the **aspect ratio** from the settings (a 9:16 node is narrower and taller).
 
 #### Connect nodes
 
@@ -150,6 +152,7 @@ Drag from the round handle on the right of a node and **drop it anywhere on the 
 #### Run
 
 * **Run all** (top-left, or `Ctrl/⌘ + Enter`) runs the whole workflow in the right order: nodes waiting for generated images start automatically once those images exist.
+* If **Run all** is disabled, the top bar shows **Issues (n)**: click it to see what to fix.
 * Each Generate node also has its own **Run** button to run only that node. It is disabled until the nodes it depends on have finished (hover to see why).
 * **Stop** cancels what is still running.
 * While running, the connections into the node that is generating light up and flow, so you can see where the workflow is.
@@ -159,6 +162,8 @@ Drag from the round handle on the right of a node and **drop it anywhere on the 
 #### Results
 
 Results appear inside each Generate node. Hover a result: 🔍 opens it large, ✕ removes it (the eraser clears all results of the node). Videos play on hover. Files are still downloaded as usual.
+
+The next node uses the **first result of each prompt**. To choose which one, drag a result by the grip in its top-left corner onto another result to swap them (images and videos).
 
 #### Manage workflows
 
@@ -224,6 +229,7 @@ Click **Save Settings** to apply, or **Reset Defaults** to restore the default v
 | **Login Required** | Make sure you are logged into your Muse.ai account. |
 | **Workflow: generation stays at "Generating" forever** | Chrome paused the hidden muse.ai tab. Turn on **Enable background mode** (or **Run in background**), or keep muse.ai visible. |
 | **Workflow: a node's Run button is disabled** | Hover it: run the node it depends on first, or fix the issue shown (e.g. no prompt connected). |
+| **Workflow: Run all is disabled** | Click **Issues (n)** in the top bar to see what to fix; click an issue to jump to its node. |
 | **Workflow: "No muse.ai tab found"** | Open [muse.ai](https://muse.ai) in a tab (the green dot in the top bar shows it's connected). |
 
 ---

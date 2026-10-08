@@ -88,7 +88,7 @@ Camera zoom chậm vào những con cá koi đang bơi bên dưới.
 1. Chọn chế độ **Thành phần thành Video**.
 2. Tải lên ảnh thành phần (nhân vật, đồ vật, bối cảnh).
 3. Nhập prompt (tách bằng dòng trống).
-4. (Tùy chọn) Bật **Tự động thêm ảnh nhân vật** để mỗi prompt dùng ảnh có tên tệp xuất hiện trong prompt. Ví dụ: `Anna.png` sẽ được thêm vào mọi prompt có chữ "Anna".
+4. (Tùy chọn) Bật **Tự động thêm ảnh nhân vật** để mỗi prompt dùng ảnh có tên tệp xuất hiện trong prompt. Ví dụ: `Anna.png` sẽ được thêm vào mọi prompt có chữ "Anna". Nếu một tên nằm trong tên dài hơn thì tên dài hơn được chọn: có `1.png` và `11.png` thì "image 11" chỉ dùng `11.png`.
 5. Nhấn **Chạy**.
 
 ### 4. Chế độ Văn bản thành Hình ảnh
@@ -120,8 +120,10 @@ Workflow là giao diện kéo thả trực quan cho các quy trình nhiều bư�
 | Khu vực | Gồm những gì |
 | :--- | :--- |
 | **Bên trái** | **Node** (bấm hoặc kéo vào bảng vẽ) và **Workflow của bạn** (danh sách workflow đã lưu) |
-| **Ở giữa** | Bảng vẽ. Góc trên trái: Hoàn tác/Làm lại, **Tự sắp xếp**, vừa khung nhìn, **Ví dụ**, xoá, và nút **Chạy tất cả** |
-| **Bên phải** | Tổng quan, **Tiến độ** trực tiếp, **Vấn đề** (bấm để nhảy tới node), **Kế hoạch chạy** và cài đặt đang dùng |
+| **Thanh trên cùng** | Công cụ bảng vẽ: Hoàn tác/Làm lại, **Tự sắp xếp**, vừa khung nhìn, **Ví dụ**, xoá. Bên phải: nút **Chi tiết**, **Phím tắt** và trạng thái tab muse.ai |
+| **Bảng vẽ** | Các node của bạn. Góc trên trái: **Chạy tất cả** (và **Dừng** khi đang chạy) và **Bật chạy nền** |
+
+Nút **Chi tiết** cho biết điều cần chú ý: **Vấn đề (n)** màu đỏ/vàng khi có gì chặn việc chạy, **Đang chạy 3/8** khi đang tạo. Bấm vào để mở bảng gồm các vấn đề (bấm một vấn đề để nhảy tới node), tiến độ, kế hoạch chạy và cài đặt đang dùng.
 
 #### Các loại node
 
@@ -132,7 +134,7 @@ Workflow là giao diện kéo thả trực quan cho các quy trình nhiều bư�
 | **Tạo ảnh** | Văn bản thành Hình ảnh, hoặc Hình ảnh thành Hình ảnh khi có ảnh nối vào. Tuỳ chọn: **Chế độ ảnh theo prompt**, **Số ảnh đầu vào tối đa mỗi Prompt**, **Tự động thêm ảnh nhân vật** |
 | **Tạo video** | Văn bản thành Video, hoặc khi có ảnh nối vào: **Khung hình thành Video** / **Thành phần thành Video**. Tuỳ chọn: **Chế độ video theo prompt**, số ảnh mỗi prompt (dùng chung cài đặt với side panel), **Tự động thêm ảnh nhân vật** (Thành phần thành Video) |
 
-Node Tạo ảnh / Tạo video tự đặt tên theo prompt đầu tiên (`image_…` / `video_…`). Mỗi dòng prompt hiển thị các ảnh mà prompt đó sẽ nhận, để bạn kiểm tra trước khi chạy.
+Node Tạo ảnh / Tạo video tự đặt tên theo prompt đầu tiên (`image_…` / `video_…`). Mỗi dòng prompt hiển thị các ảnh mà prompt đó sẽ nhận, để bạn kiểm tra trước khi chạy. Khung xem trước theo **tỉ lệ khung hình** trong cài đặt (node 9:16 hẹp và cao hơn).
 
 #### Nối các node
 
@@ -150,6 +152,7 @@ Kéo từ chấm tròn bên phải của một node và **thả vào bất kỳ 
 #### Chạy
 
 * **Chạy tất cả** (góc trên trái, hoặc `Ctrl/⌘ + Enter`) chạy cả workflow theo đúng thứ tự: node nào cần ảnh được tạo sẽ tự chạy khi ảnh đã có.
+* Nếu **Chạy tất cả** bị khoá, thanh trên cùng hiện **Vấn đề (n)**: bấm vào để xem cần sửa gì.
 * Mỗi node Tạo ảnh / Tạo video có nút **Chạy** riêng để chỉ chạy node đó. Nút bị khoá cho tới khi các node nó phụ thuộc chạy xong (rê chuột để xem lý do).
 * **Dừng** huỷ những gì đang chạy.
 * Khi đang chạy, các đường nối vào node đang tạo sẽ sáng lên và có dòng chảy, để bạn thấy workflow đang ở bước nào.
@@ -159,6 +162,8 @@ Kéo từ chấm tròn bên phải của một node và **thả vào bất kỳ 
 #### Kết quả
 
 Kết quả hiện ngay trong node Tạo ảnh / Tạo video. Rê chuột vào kết quả: 🔍 để xem lớn, ✕ để xoá (nút cục tẩy xoá toàn bộ kết quả của node). Video tự phát khi rê chuột. File vẫn được tải xuống như bình thường.
+
+Node phía sau dùng **kết quả đầu tiên của mỗi prompt**. Muốn chọn kết quả khác, kéo nút ở góc trên trái của một kết quả thả lên kết quả khác để đổi chỗ (ảnh và video).
 
 #### Quản lý workflow
 
@@ -224,6 +229,7 @@ Nhấn **Lưu cài đặt** để áp dụng, hoặc **Đặt lại mặc địn
 | **Yêu cầu đăng nhập** | Đảm bảo đã đăng nhập tài khoản Muse.ai. |
 | **Workflow: kết quả đứng mãi ở "Đang tạo"** | Chrome đã tạm dừng tab muse.ai bị che. Bật **Bật chạy nền** (hoặc **Chạy nền**), hoặc để tab muse.ai hiển thị. |
 | **Workflow: nút Chạy của một node bị mờ** | Rê chuột vào nút: chạy node mà nó phụ thuộc trước, hoặc sửa vấn đề được báo (ví dụ chưa nối prompt). |
+| **Workflow: Chạy tất cả bị khoá** | Bấm **Vấn đề (n)** trên thanh trên cùng để xem cần sửa gì; bấm một vấn đề để nhảy tới node đó. |
 | **Workflow: "Không tìm thấy tab muse.ai"** | Mở [muse.ai](https://muse.ai) trong một tab (chấm xanh trên thanh trên cùng cho biết đã kết nối). |
 
 ---
